@@ -1,0 +1,43 @@
+{
+  "name": "my-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"next dev --turbo\" \"tailwindcss -i app/globals.css -o app/dist.css -w\"",
+    "build": "tailwindcss -m -i app/globals.css -o app/dist.css && next build",
+    "start": "next start",
+    "co": "sui-mono commit",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroicons/react": "2.0.13",
+    "@next/font": "13.1.0",
+    "@types/node": "18.11.17",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.10",
+    "accept-language": "3.0.18",
+    "eslint": "8.30.0",
+    "eslint-config-next": "13.1.0",
+    "framer-motion": "8.0.2",
+    "i18next": "22.4.9",
+    "i18next-resources-to-backend": "1.1.1",
+    "jotai": "1.12.1",
+    "next": "13.1.0",
+    "postcss": "8.4.20",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "12.1.4",
+    "typescript": "4.9.4",
+    "zustand": "4.1.5"
+  },
+  "devDependencies": {
+    "@s-ui/mono": "2.34.0",
+    "autoprefixer": "10.4.13",
+    "concurrently": "7.6.0",
+    "standard": "17.0.0",
+    "tailwindcss": "3.2.4"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}

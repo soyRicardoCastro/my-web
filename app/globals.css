@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==== Loader Styles ==== */
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7.33333em;
+  height: 7.33333em;
+  margin-left: -3.66667em;
+  margin-top: -3.66667em;
+}
+
+.loader-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  opacity: 0;
+  width: 2em;
+  height: 2em;
+  background: #fdfdfd;
+  -webkit-animation: show 0.88s step-end infinite alternate, pulse 0.88s linear infinite alternate;
+  animation: show 0.88s step-end infinite alternate, pulse 0.88s linear infinite alternate;
+}
+
+.loader-block:nth-child(1) {
+  transform: translate(0, 0);
+  animation-delay: 0.065s;
+}
+
+.loader-block:nth-child(2) {
+  transform: translate(2.66667em, 0);
+  animation-delay: 0.13s;
+}
+
+.loader-block:nth-child(3) {
+  transform: translate(5.33333em, 0);
+  animation-delay: 0.195s;
+}
+
+.loader-block:nth-child(4) {
+  transform: translate(0, 2.66667em);
+  animation-delay: 0.325s;
+}
+
+.loader-block:nth-child(5) {
+  transform: translate(2.66667em, 2.66667em);
+  animation-delay: 0.13s;
+}
+
+.loader-block:nth-child(6) {
+  transform: translate(5.33333em, 2.66667em);
+  animation-delay: 0.455s;
+}
+
+.loader-block:nth-child(7) {
+  transform: translate(0, 5.33333em);
+  animation-delay: 0.39s;
+}
+
+.loader-block:nth-child(8) {
+  transform: translate(2.66667em, 5.33333em);
+  animation-delay: 0.26s;
+}
+
+.loader-block:nth-child(9) {
+  transform: translate(5.33333em, 5.33333em);
+}
+
+@keyframes pulse {
+  from,
+  40% {
+    background: #fdfdfd;
+  }
+  to {
+    background: #dadada;
+  }
+}
+@keyframes show {
+  from, 40% {
+    opacity: 0;
+  }
+  41%, to {
+    opacity: 1;
+  }
+}
+
+/* ==== Text Logo ==== */
+.rc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 0.85;
+  text-transform: uppercase;
+  background-size: contain;
+  z-index: 10;
+}
+
+.rc + .rc {
+  -webkit-text-fill-color: red;
+  z-index: 20;
+  animation: text-color 3s ease-out infinite alternate;
+}
+
+@keyframes text-color {
+  from {
+    clip-path: polygon(100% 0, 100% 100%, 20% 100%, 61% 91%, 94% 47%);
+  }
+  50% {
+    clip-path: polygon(100% 0, 100% 100%, 20% 100%, 59% 52%, 74% 13%);
+  }
+  to {
+    clip-path: polygon(100% 0, 100% 100%, 20% 100%, 0 85%, 87% 41%);
+  }
+}
+
+/* ==== Hamburger Button ==== */
+.hamburger {
+  transition: translate 1s, rotate 1s, stroke 0.3s;
+}
+
+.hamburger.clicked:hover {
+  stroke: rgb(255 255 255 / 0.7);
+}
+
+.hamburger.clicked {
+  translate: 3px -3px;
+  rotate: 0.125turn;
+}
+
+.hamburger .line {
+  transition: 0.6s ease all;
+  stroke-dasharray: 60 31 60 300;
+}
+
+.hamburger:hover > .line {
+  stroke-dasharray: 60 31 30 300;
+}
+
+.hamburger.clicked > .line {
+  stroke-dasharray: 60 105 60 300;
+  stroke-dashoffset: -90;
+}
+
+/* ==== Menu Animations ==== */
+.menu-slider-1,
+.menu-slider-2,
+.menu-slider-3,
+.menu {
+  transform: translateX(-100vw);
+  transition: .3s ease-in-out transform;
+}
+.menu-slider-1.active-menu {
+  transition-delay: 0s;
+}
+.menu-slider-2.active-menu {
+  transition-delay: .3s;
+}
+.menu-slider-3.active-menu {
+  transition-delay: .6s;
+}
+.menu.active-menu {
+  transition-delay: 1s;
+  z-index: 100;
+}
+.menu-slider-1.active-menu,
+.menu-slider-2.active-menu,
+.menu-slider-3.active-menu,
+.menu.active-menu {
+  transform: translateX(0);
+}
+
+/* === Sweet Title === */
+.sweet-title {
+  color: #e5e7eb;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 0.75em;
+  text-align: center;
+  text-shadow: 3px 1px 1px #f00, 2px 2px 1px #f44, 4px 2px 1px #f00, 3px 3px 1px #f44, 5px 3px 1px #f00, 4px 4px 1px #f44, 6px 4px 1px #f00, 5px 5px 1px #f44, 7px 5px 1px #f00, 6px 6px 1px #f44, 8px 6px 1px #f00, 7px 7px 1px #f44, 9px 7px 1px #f00;
+}
+
+.sweet-title span {
+  display: block;
+  position: relative;
+}
+
+.sweet-title span:before {
+  content: attr(data-text);
+  position: absolute;
+  text-shadow: 2px 2px 1px #444, -1px -1px 1px #111, -2px 2px 1px #444, 1px -1px 1px #444;
+  z-index: 0;
+}
+
+.sweet-title span:nth-child(1) {
+  padding-right: 2.25rem;
+}
+
+.sweet-title span:nth-child(2) {
+  padding-left: 2.25rem;
+}
+
+/* === Stroke Link Hover === */
+.stroke-link:hover {
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-image: -webkit-gradient(linear, left top, right top, from(#09f1b8), color-stop(#00a2ff), color-stop(#ff00d2), to(#fed90f));
+  background-image: -o-linear-gradient(left, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+  background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+  color: #000119;
+  font-weight: 700;
+  letter-spacing: calc(1em / 8);
+  padding: calc(calc(1em - 16) / 2);
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: calc(1em / 16);
+}
+
+/* === Stroke Link Hover === */
+.fancy-underline {
+  position: relative;
+  white-space: nowrap;
+}
+.fancy-underline:after {
+  --deco-height: 0.3125em;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--deco-height) * -0.9);
+  height: var(--deco-height);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%23FACC15' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-size: auto 100%;
+  background-repeat: round;
+  background-position: 0em;
+}
+.fancy-underline-white {
+  position: relative;
+  white-space: nowrap;
+}
+.fancy-underline-white:after {
+  --deco-height: 0.3125em;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--deco-height) * -0.9);
+  height: var(--deco-height);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%23FFF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-size: auto 100%;
+  background-repeat: round;
+  background-position: 0em;
+}
