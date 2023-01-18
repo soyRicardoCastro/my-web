@@ -17,7 +17,7 @@ export default function Menu () {
     <div className={`w-full h-[calc(100vh-60px)] absolute inset-0 bg-yellow-500 mt-[60px] menu-slider-2 ${menuActive && 'active-menu'}`}></div>
     <div className={`w-full h-[calc(100vh-60px)] absolute inset-0 bg-orange-500 mt-[60px] menu-slider-3 ${menuActive && 'active-menu'}`}></div>
 
-    <nav className={`absolute [touch-action:none] flex items-center justify-center md:hidden inset-0 w-full min-h-screen mt-[60px] menu -z-10 bg-black/90 ${menuActive && "active-menu [overflow-y:hidden]"}`}>
+    <nav className={`[position:fixed] [touch-action] flex items-center justify-center md:hidden inset-0 w-full min-h-screen mt-[60px] menu -z-10 bg-black/90 ${menuActive && "active-menu"}`}>
       <ul className="flex flex-col text-gray-200 font-extrabold gap-12">
         <li>
           <Link

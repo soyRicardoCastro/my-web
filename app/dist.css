@@ -581,6 +581,10 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-\[calc\(100vh-60px\)\] {
   height: calc(100vh - 60px);
 }
@@ -753,6 +757,10 @@ video {
   border-width: 2px;
 }
 
+.border-b {
+  border-bottom-width: 1px;
+}
+
 .border-red-200 {
   --tw-border-opacity: 1;
   border-color: rgb(254 202 202 / var(--tw-border-opacity));
@@ -761,6 +769,11 @@ video {
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .bg-black\/90 {
@@ -837,6 +850,30 @@ video {
   background-color: rgb(101 163 13 / var(--tw-bg-opacity));
 }
 
+.bg-sky-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(3 105 161 / var(--tw-bg-opacity));
+}
+
+.bg-red-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
+.bg-orange-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
+}
+
+.bg-sky-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
+}
+
+.bg-gray-900\/70 {
+  background-color: rgb(17 24 39 / 0.7);
+}
+
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
@@ -859,8 +896,8 @@ video {
   padding: 1rem;
 }
 
-.p-12 {
-  padding: 3rem;
+.p-8 {
+  padding: 2rem;
 }
 
 .py-6 {
@@ -878,16 +915,6 @@ video {
   padding-right: 0.5rem;
 }
 
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -901,6 +928,11 @@ video {
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .text-left {
@@ -963,6 +995,10 @@ video {
 
 .font-thin {
   font-weight: 100;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .capitalize {
@@ -1028,12 +1064,8 @@ video {
   letter-spacing: 4px;
 }
 
-.\[touch-action\:none\] {
-  touch-action: none;
-}
-
-.\[overflow-y\:hidden\] {
-  overflow-y: hidden;
+.\[position\:fixed\] {
+  position: fixed;
 }
 
 .\[backdrop-filter\:blur\(20px\)\] {
@@ -1053,16 +1085,16 @@ video {
   z-index: -10;
 }
 
+.\[font-style\:italic\] {
+  font-style: italic;
+}
+
 .\[gap\:30px\] {
   gap: 30px;
 }
 
 .\[z-index\:-1\] {
   z-index: -1;
-}
-
-.\[font-style\:italic\] {
-  font-style: italic;
 }
 
 .\[transform\:rotate\(-35deg\)_translateX\(1px\)_translateY\(1px\)\] {

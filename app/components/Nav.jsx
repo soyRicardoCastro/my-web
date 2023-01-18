@@ -10,7 +10,7 @@ export default function Nav () {
 
   return (
     <header className='w-full h-[60px] flex items-center justify-between [backdrop-filter:blur(20px)] px-2 relative z-100'>
-      <Link href='/' onClick={() => setMenuActive(prev => !prev)}>
+      <Link href='/' onClick={() => menuActive && setMenuActive(false)}>
         <Logo />
       </Link>
 

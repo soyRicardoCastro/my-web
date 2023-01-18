@@ -2,7 +2,7 @@ import { Form } from '../components'
 
 export default function Contact () {
   return (
-    <section className='px-12 py-8 flex flex-col justify-center gap-8'>
+    <section className='p-8 flex flex-col justify-center gap-8'>
       <h2 className='text-center text-2xl font-bold'>Talk with me</h2>
 
       <p className='text-center'>Estoy abierto a nuevos proyectos, ideas y negocios, enviame un email de preferencia y hablemos mas sobre eso.</p>
