@@ -11,7 +11,9 @@ export default function RootLayout({
       </head>
       <body className='bg-black/90 text-gray-200 min-h-screen'>
         <Nav />
-        {children}
+        <main>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

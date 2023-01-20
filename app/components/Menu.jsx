@@ -11,13 +11,15 @@ export default function Menu () {
 
   const toggleMenuActive = () => setMenuActive(prev => !prev)
 
+  const divsClass = `w-full h-[calc(100vh-60px)] absolute inset-0 mt-[60px] ${menuActive && 'active-menu'}`
+
   return (
     <>
-    <div className={`w-full h-[calc(100vh-60px)] absolute inset-0 bg-black/90 mt-[60px] menu-slider-1 ${menuActive && 'active-menu'}`}></div>
-    <div className={`w-full h-[calc(100vh-60px)] absolute inset-0 bg-yellow-500 mt-[60px] menu-slider-2 ${menuActive && 'active-menu'}`}></div>
-    <div className={`w-full h-[calc(100vh-60px)] absolute inset-0 bg-orange-500 mt-[60px] menu-slider-3 ${menuActive && 'active-menu'}`}></div>
+    <div className={`bg-black/90 menu-slider-1 ${divsClass}`} />
+    <div className={`bg-yellow-500 menu-slider-2 ${divsClass}`} />
+    <div className={`bg-orange-500 menu-slider-3 ${divsClass}`} />
 
-    <nav className={`[position:fixed] [touch-action] flex items-center justify-center md:hidden inset-0 w-full min-h-screen mt-[60px] menu -z-10 bg-black/90 ${menuActive && "active-menu"}`}>
+    <nav className={`fixed flex items-center justify-center md:hidden inset-0 w-full min-h-screen mt-[60px] menu -z-10 bg-black/90 ${menuActive && "active-menu"}`}>
       <ul className="flex flex-col text-gray-200 font-extrabold gap-12">
         <li>
           <Link

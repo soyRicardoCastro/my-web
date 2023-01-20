@@ -8,7 +8,7 @@ export default function Hamburger () {
 
   return (
     <button
-      className="bg-transparent overflow-hidden"
+      className="bg-transparent overflow-hidden md:hidden"
       onClick={() => setMenuActive(prev => !prev)}
     >
       <svg

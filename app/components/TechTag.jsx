@@ -1,12 +1,12 @@
 import Image from 'next/image'
 
 function TechTag ({
-  name = "React",
-  url = "/logos/react.svg",
-  color = "bg-sky-600"
+  name,
+  url,
+  color
 }) {
   return (
-    <div className={`flex items-center justify-center gap-2 text-sm w-auto h-6 rounded-md p-2 capitalize font-semibold ${color}`}>
+    <div className={`flex items-center justify-center gap-2 text-sm md:text-base w-auto h-6 rounded-md p-2 md:p-3 capitalize font-semibold ${color}`}>
       <Image
         src={url}
         width={20}

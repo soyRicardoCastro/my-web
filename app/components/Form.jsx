@@ -15,15 +15,18 @@ export default function Form () {
       ...form,
       [e.target.name]: e.target.value
     })
-    setHrefData(prev => `${prev}?subject=${form.name}&body=${form.subject}`)
+    handleClick()
   }
 
   const handleClick = () => {
-    setHrefData(prev => `${prev}?subject=${form.name}&body=${form.subject}`)
+    setHrefData(
+      prev =>
+      `${prev}?subject=${form.name}&body=${form.subject}`
+    )
   }
 
   return (
-    <form onSubmit={e => e.preventDefault()} className='flex flex-col gap-6 text-md font-semibold'>
+    <form onSubmit={e => e.preventDefault()} className='md:w-3/4 md:mx-auto flex flex-col gap-6 text-md font-semibold'>
       <label className='flex flex-col gap-2'>
         Name
 
