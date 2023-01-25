@@ -1,46 +1,70 @@
 "use client"
 
-import Link from 'next/link'
-import { useAtom } from "jotai"
-import { Hamburger, Logo, Menu, Social } from "."
-import { menuActiveAtom } from '../store'
+import { Navbar, Text, Link, Image } from '@nextui-org/react'
+import { usePathname } from 'next/navigation'
+
+import { ChangeTheme } from '.'
+
+const NavLink = ({ text, path, ...props }) => {
+  const pathname = usePathname()
+  return (
+    <Navbar.CollapseItem
+      isActive={pathname === path}
+      activeColor="primary"
+      {...props}
+    >
+      <Link
+        href={path}
+        color="inherit"
+      >
+        {text}
+      </Link>
+    </Navbar.CollapseItem>
+  )
+}
 
 export default function Nav () {
-  const [menuActive, setMenuActive] = useAtom(menuActiveAtom)
+  const pathname = usePathname()
 
   return (
-    <header className='w-full md:w-3/4 md:mx-auto md:my-2 h-[60px] flex items-center justify-between [backdrop-filter:blur(20px)] px-2 relative z-100'>
-      <Link href='/' onClick={() => menuActive && setMenuActive(false)}>
-        <Logo />
-      </Link>
+    <Navbar
+      isBordered
+      variant="sticky"
+      enableCursorHighlight
+      activeColor="primary"  
+    >
+      <Navbar.Brand>
+        <Image showSkeleton src='/logo.png' alt='Logo' width={35} height={35} />
+        <Text css={{ marginLeft: "$5" }} size="$xl" showIn="xs" b color="inherit">
+          RC
+        </Text>
+        <Text css={{ marginLeft: "$5" }} size="$xl" b color="inherit" hideIn="xs">
+          Ricardo Castro
+        </Text>
+      </Navbar.Brand>
 
-      <Hamburger />
-      
-      <Menu visible={menuActive} />
+      <Navbar.Content
+        enableCursorHighlight
+        activeColor="primary"
+        hideIn="xs"
+        variant="underline-rounded"
+      >
+        <Navbar.Link isActive={pathname === '/'} href="/">Home</Navbar.Link>
+        <Navbar.Link isActive={pathname === '/projects'} href="/projects">Projects</Navbar.Link>
+        <Navbar.Link isActive={pathname === '/contact'} href="/contact">Contact</Navbar.Link>
+      </Navbar.Content>
 
-      <ul className="hidden md:flex gap-4 [&>li]:text-xl">
-        <li>
-          <Link
-            href="/"
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/projects"
-          >
-            Projects
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/contact"
-          >
-            Contact
-          </Link>
-        </li>
-      </ul>
-    </header>
+      <Navbar.Content>
+        <ChangeTheme />
+
+        <Navbar.Toggle showIn="xs" aria-label="toggle navigation" />
+      </Navbar.Content>
+
+      <Navbar.Collapse>
+        <NavLink path='/' text='Home' />
+        <NavLink path='/projects' text='Projects' />
+        <NavLink path='/contact' text='Contact' />
+      </Navbar.Collapse>
+    </Navbar>
   )
 }

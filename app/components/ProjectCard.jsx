@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { LinkIcon } from '@heroicons/react/24/outline'
 import { ProjectImagesPreview, TechTag } from '.'
+import { FeatureItem } from './features-grid/styles'
 
 function ProjectCard ({
   name,
@@ -13,7 +14,7 @@ function ProjectCard ({
   urlMobile
 }) {
   return (
-    <article className={`w-full md:w-3/4 h-auto flex flex-col items-center justify-center gap-2 bg-gray-700/20 p-4 rounded-md transition ease delay-150 ${className}`}>
+    <FeatureItem className={`h-auto flex flex-col items-center justify-center gap-2 bg-gray-700/20 p-4 rounded-md transition ease delay-150 ${className}`}>
       <header className='w-full block'>
         <ProjectImagesPreview
           name={name}
@@ -38,7 +39,7 @@ function ProjectCard ({
           ))}
         </footer>
       </div>
-    </article>
+    </FeatureItem>
   )
 }
 

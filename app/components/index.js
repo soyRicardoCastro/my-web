@@ -1,4 +1,6 @@
 export { default as Nav } from './Nav'
+export { default as ChangeTheme } from './ChangeTheme'
+
 export { default as TextLogo } from './TextLogo'
 export { default as Logo } from './Logo'
 export { default as Hamburger } from './Hamburger'
@@ -9,9 +11,12 @@ export { default as ProjectCard } from './ProjectCard'
 export { default as TechTag } from './TechTag'
 export { default as Social } from './Social'
 export { default as Form } from './Form'
+export { default as LooperBG } from './looper-bg'
 
 // Icons
 export { default as GithubIcon } from './icons/Github'
 export { default as InstagramIcon } from './icons/Instagram'
 export { default as TelegramIcon } from './icons/Telegram'
 export { default as GmailIcon } from './icons/Gmail'
+export { default as SunIcon } from './icons/SunIcon'
+export { default as MoonIcon } from './icons/MoonIcon'
