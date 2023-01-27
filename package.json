@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"tailwindcss -i app/globals.css -o app/dist.css -w\"",
-    "dev2": "next dev",
+    "dev2": "concurrently \"next dev\" \"tailwindcss -i app/globals.css -o app/dist.css -w\"",
+    "dev": "next dev",
     "build": "tailwindcss -m -i app/globals.css -o app/dist.css && next build",
     "start": "next start",
     "co": "sui-mono commit",
